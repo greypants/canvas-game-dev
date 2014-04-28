@@ -3,23 +3,31 @@ var ctx = require('../lib/context');
 var canvas = require('../lib/canvas');
 var inputs = require('../lib/inputs');
 var last = require('../lib/last');
-var ship = drawImage('/build/images/ship.png');
+var Bitmap = require('../lib/Bitmap');
+var ship = new Bitmap('/build/images/ship.png');
 
-var x = (canvas.width / 2) - 80;
-var y = canvas.height - 170;
-var speed = 10;
+ship.x = (canvas.width / 2) - 80;
+ship.y = canvas.height - 170;
+ship.speed = 10;
 
 module.exports = function() {
 
 	if(inputs.left.isPressed) {
-		x -= speed;
+		ship.x -= ship.speed;
 	}
 
 	if(inputs.right.isPressed){
-		x += speed;
+		ship.x += ship.speed;
 	}
 
-	var obj = {x: x, y: y, width: ship.width, height: ship.height}
-	last.update(obj);
-	ctx.drawImage(ship, x, y);
+	if(inputs.up.isPressed) {
+		ship.y -= ship.speed;
+	}
+
+	if(inputs.down.isPressed){
+		ship.y += ship.speed;
+	}
+
+	// last.update(ship);
+	ctx.drawImage(ship.img, ship.x, ship.y);
 };

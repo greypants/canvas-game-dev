@@ -9,15 +9,19 @@ Bitmap.prototype = {
 		this.ready = false;
 		this.img = new Image();
 
-		thisImage.image.onload = function () {
+		this.img.onload = function () {
 			this.ready = true;
+			this.width = this.img.width;
+			this.height = this.img.height;
 		}.bind(this);
 
 		this.img.src = src;
 	},
 
 	render: function(ctx) {
-		ctx.drawImage(this.img, this.x, this.y);
+		if(this.ready) {
+			ctx.drawImage(this.img, this.x, this.y);
+		}
 	}
 };
 
