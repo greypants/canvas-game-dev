@@ -85,22 +85,27 @@ ctx.fill();
 ctx.closePath();
 ```
 
-If there are any math nerds out there, this is for you. Drawing and manipulating vector paths is pure math. Drawing anything beyond a circle or rectangle by hand gets pretty complex pretty fast. But like Sinbad told us in the 90's, math is power! We'll get to that power when we look at animation.
+If there are any math nerds out there, this is for you. Drawing and manipulating vector paths is pure math. Drawing anything beyond a circle or rectangle by hand gets pretty complex pretty fast. But like Sinbad told us in the 90's, math is power! Here is one of my favorite uses of that power:
 
-In the meantime, here are a few of the methods you'd use.
+http://www.staggeringbeauty.com/
 
 ```js
-fill()
-stroke()
+// Drawing
 beginPath()
-moveTo()
 closePath()
-lineTo()
-clip()
-quadraticCurveTo()
-bezierCurveTo()
 arc()
 arcTo()
+lineTo()
+moveTo()
+quadraticCurveTo()
+bezierCurveTo()
+
+// Coloring
+fill()
+stroke()
+
+// Masking
+clip()
 ```
 
 ### Pixel Things
@@ -178,4 +183,123 @@ var loop = function {
   requestAnimationFrame(loop);
 };
 ```
+Animation is nothing more than a series of pictures that change slightly over time, and thats exactly what we need to do to the canvas. To achieve animation, all we need to do is redraw our canvas over and over again, making little changes each time.
 
+It's important to key in on the word **time** here. As far as we're concerned when writing JavaScript, time is constant. At least it is if we're talking about game develpment and not advanced physics. What is likely not constant is the frame rate you can achieve across every device your game will be viewed on. Because of this, it's critical not tie movement to the progression of frames.
+
+#### Frame-based
+```js
+var x = 0;
+var velocity = 1 // (px per FRAME)
+var loop = function(){
+  requestAnimationFrame(function(){
+    x = x + velocity;
+  });
+  loop();
+});
+```
+For example, if you have an object on the screen that you move to hte left 1px ever frame, on a good device, running at 60fps, it would take 2 seconds to move 120px. But on a low-end or aging mobile device, you may only get ~12 frames a second. At that rate, your animation would take 10 seconds to complete! So instead of basing movemnt on frames, you can base it on time, and achieve consistent speed across varying framerates.
+
+#### Time Based
+(baddie moving on a loop)
+```js
+var velocity = 60 // (px per SECOND)
+
+var loop = function() {
+  // Update the difference in time
+  now = Date.now() / 1000; // seconds
+  delta = (now - then); // time passed
+  then = now;
+
+  // Time Based Movement
+  x = x + (velocity * delta);
+  frame = requestAnimationFrame(loop);
+});
+```
+
+In this example, no matter what frame rate you're getting, your object will move across the screen at exactly 60 pixels per second.
+
+(Pair this with Bullet Bill example)
+
+### Input
+(ship moving)
+
+There essentially two other factors that alter your objects over time. User input, and other objects. Handling input is a little bit trickier than you'd think. In creating a normal javascript interaction, you'd add an event listener to an element, and add a callback. Straight forward. But when you're creating interactions with the canvas, you only have one element to work with - the canvas. And since you're running your animation with a loop, you want the effect of your input to affect the drawing of the next frame.
+
+What you end up having to do is manage the *state* of various inputs, check those states on each loop, and respond accordingly. In our game, we want to reference keys by name, but event listeners need to refernce keys by code. The solution is to create two mappings to the same input data.
+
+```js
+var data = {
+  name: 'left',
+  code: 37,
+  isPressed: false,
+  initialPress: false
+};
+37: 'left',
+var inputs = {
+  byCode: {
+    37: data
+  },
+
+  byName: {
+    'left' : data
+  }
+}
+```
+Now everyone is happy.
+
+```js
+addEventListener('keydown', function(e) {
+  if (inputs.byCode[e.keyCode]) {
+    ...
+  }
+});
+```
+
+```js
+if (inputs.byName.left.isPressed) {
+  ...
+}
+```
+
+Consider moving a ship with the arrow keys.
+
+### Collisions
+So the last thing that affects our game objects are other game objects. This is where collision detection comes into play. One of the simplest and fastest methods the bounding box check.
+
+```js
+isCollision: function(a, b) {
+  return  a.x <= (b.x + b.width) &&
+    b.x <= (a.x + a.width) &&
+    a.y <= (b.y + b.height) &&
+    b.y <= (a.y + a.height);
+}
+```
+
+If the bounding boxes of two objects on the canvas are overlapping, you have a collision. Not super accurate for complex shapes, but for most 2d games, this can be good enough. On Run Puma Run, I assigned some objects multiple hit areas to fine tune my collisions. I won't get into the other types today, but there are plenty of good articles out there on the topic.
+
+![Debug Mode](debugpuma.png)
+
+## Sound Effects
+
+
+## Performance Considerations
+Expensive things
+- Changing drawing modes
+- Transforming the canvas
+
+## Wrap up
+Links
+- Magical 8bit Plugin
+
+Performance:
+http://www.html5rocks.com/en/tutorials/canvas/performance/
+http://jsperf.com/canvas-translate-vs-draw-coordinates
+
+Shape examples:
+http://www.staggeringbeauty.com/
+
+Libraries
+http://paperjs.org/
+http://kineticjs.com/
+http://createjs.com/

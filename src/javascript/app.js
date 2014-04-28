@@ -1,7 +1,9 @@
-var canvas = require('./lib/canvas');
-var ctx = require('./lib/context');
-var drawCircle = require('./lib/drawCircle');
-require('./playground');
+// var canvas = require('./lib/canvas');
+// var ctx = require('./lib/context');
+// var drawCircle = require('./lib/drawCircle');
+// require('./playground');
+require('./steps/sprite.js');
+
 // var animateShape = require('./examples/animateShape2')
 
 // drawCircle(100);
