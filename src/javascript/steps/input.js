@@ -1,7 +1,8 @@
 var drawImage = require('../lib/drawImage');
 var ctx = require('../lib/context');
 var canvas = require('../lib/canvas');
-var inputs = require('../lib/inputs');
+var keyMap = require('../config/keyMap');
+var inputs = require('../lib/inputs')(keyMap);
 var last = require('../lib/last');
 var Bitmap = require('../lib/Bitmap');
 var ship = new Bitmap('/build/images/ship.png');
