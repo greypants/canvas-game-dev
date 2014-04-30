@@ -31,4 +31,4 @@ var frameActions = function() {
 	}
 };
 
-module.exports = new Example(frameActions, ctx);
+module.exports = new Example(frameActions, true);

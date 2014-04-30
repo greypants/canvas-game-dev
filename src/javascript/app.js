@@ -8,15 +8,7 @@ frames.init();
 
 var examples = require('./examples');
 
+// examples.drawImage.run();
+// examples.drawShape.run();
+// examples.animateShape.run();
 examples.sprites.run();
-// var animateShape = require('./examples/animateShape2')
-
-// drawCircle(100);
-// var loop = function() {
-//	// last.clear();
-//	ctx.clearRect(0, 0, canvas.width, canvas.height)
-//	animateShape();
-//	requestAnimationFrame(loop);
-// };
-
-// loop();

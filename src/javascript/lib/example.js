@@ -1,12 +1,18 @@
 var frames = require('frames');
-var Example = function(action) {
+
+var Example = function(action, loops) {
 	this.action = action;
+	this.loops = loops;
 };
 
 Example.prototype = {
 	run: function() {
-		frames.action = this.action;
-		frames.play();
+		if(this.loops) {
+			frames.action = this.action;
+			frames.play();
+		} else {
+			this.action();
+		}
 	},
 
 	pause: function() {
