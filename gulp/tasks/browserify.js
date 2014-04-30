@@ -20,7 +20,6 @@ gulp.task('browserify', function(){
 			entries: ['./src/javascript/app.js'],
 			extensions: ['.coffee', '.hbs']
 		})
-		.require('backbone/node_modules/underscore', { expose: 'underscore' })
 		.bundle({debug: true})
 		.on('error', errorHandler)
 		.pipe(source('app.js'))
