@@ -9,6 +9,6 @@ module.exports = new Example(function(){
 		ctx.drawImage(e.srcElement, 50, 50);
 	};
 
-	image.setAttribute('src', 'build/images/ship.png');
+	image.setAttribute('src', 'images/ship.png');
 
 });

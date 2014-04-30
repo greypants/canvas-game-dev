@@ -2,7 +2,7 @@ var Example = require('example');
 var Bitmap = require('bitmap');
 var ctx = require('context');
 var canvas = require('canvas');
-var baddie = new Bitmap('/build/images/enemy.png');
+var baddie = new Bitmap('images/enemy.png');
 
 var speed = {
 	x: 0.001,

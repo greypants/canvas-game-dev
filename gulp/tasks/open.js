@@ -9,5 +9,5 @@ gulp.task('open', function() {
 		app: "google chrome"
 	};
 
-	return gulp.src("./index.html").pipe(open("", options));
+	return gulp.src("./build/index.html").pipe(open("", options));
 });

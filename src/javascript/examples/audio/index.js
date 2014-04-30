@@ -1,6 +1,6 @@
 var Example = require('example');
 var canvas = require('canvas');
-var ship = new Bitmap('/build/images/ship.png');
+var ship = new Bitmap('images/ship.png');
 var Inputs = require('inputs');
 var ctx = require('context');
 
@@ -9,7 +9,7 @@ ship.y = canvas.height - 170;
 
 var audio = document.createElement("audio");
 audio.preload = 'auto';
-audio.src = '/build/audio/laser.ogg';
+audio.src = 'audio/laser.ogg';
 
 var inputs = new Inputs({
 	32: 'spacebar'

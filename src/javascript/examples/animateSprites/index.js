@@ -5,7 +5,7 @@ var frames     = require('frames');
 var Sprite     = require('./sprite');
 
 var runner = new Sprite({
-	src: 'build/images/player-sprites.png',
+	src: 'images/player-sprites.png',
 	fps: 8,
 	frameIndex: 0,
 	x: 0,
