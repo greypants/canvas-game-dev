@@ -1,21 +1,10 @@
-gulp-starter
-============
+Canvas Game Dev
+===============
+Step by step examples of building an HTML5 game with JavaScript and Canvas.
 
-Starter Gulp + Browserify project with examples of how to accomplish some common tasks and workflows. Read the [blog post](http://viget.com/extend/gulp-browserify-starter-faq) for more context, and check out the [Wiki]() for some good background knowledge.
 
-Includes the follwing tools, tasks, and workflows:
-
-- Browserify (with browserify-shim)
-- Compass
-- CoffeeScript (with source mapping!)
-- jQuery (from npm)
-- Backbone (from npm)
-- Handlebars (as a backbone dependency)
-- Non common-js vendor code (like a jQuery plugin)
-- LiveReload
-- Static Server
-- Image optimization
-- Error Notifications in Notification Center
+## Running Locally
+Setup based on (gulp-starter)[https://github.com/greypants/gulp-starter]
 
 If you've never used Node or npm before, you'll need to install Node.
 If you use homebrew, do:
