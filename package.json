@@ -11,7 +11,8 @@
     "canvas": "./src/javascript/lib/canvas.js",
     "frames": "./src/javascript/lib/frames.js",
     "bitmap": "./src/javascript/lib/bitmap.js",
-    "example": "./src/javascript/lib/example.js"
+    "example": "./src/javascript/lib/example.js",
+    "inputs": "./src/javascript/lib/inputs.js"
   },
   "browserify": {
     "transform": [

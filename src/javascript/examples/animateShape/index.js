@@ -31,7 +31,7 @@ module.exports = new Example(function(){
 		y = point.y + (40 * Math.cos(Date.now() / (200 + point.x)));
 		ctx.lineTo(x, y);
 	});
-	ctx.stroke();
+	ctx.fill();
 	ctx.closePath();
 	ctx.restore();
 
