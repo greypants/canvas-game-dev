@@ -1,6 +1,3 @@
-var frames = require('frames');
-frames.init();
-
 var examples = require('./examples');
 
 // examples.drawImage.run();
@@ -10,5 +7,6 @@ var examples = require('./examples');
 // examples.animateWithInput.run();
 // examples.animateSprites.run();
 // examples.collisions.run();
-// examples.audio.run();
+examples.audio.run();
+// examples.text.run();
 

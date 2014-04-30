@@ -1,3 +1,6 @@
+var frames = require('frames');
+frames.init();
+
 module.exports = {
 	drawImage: require('./drawImage'),
 	drawShape: require('./drawShape'),
@@ -5,5 +8,6 @@ module.exports = {
 	animateWithTime: require('./animateWithTime'),
 	animateWithInput: require('./animateWithInput'),
 	animateSprites: require('./animateSprites'),
-	collisions: require('./collisions')
+	collisions: require('./collisions'),
+	audio: require('./audio')
 };
