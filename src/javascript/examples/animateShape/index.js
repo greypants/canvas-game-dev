@@ -21,14 +21,16 @@ module.exports = new Example(function(){
 	rotation = rotation >= 2 * Math.PI ? 0 : rotation + 0.005;
 
 	ctx.save();
+
 	ctx.translate(200, 150);
 	ctx.rotate(rotation);
 	ctx.translate(-200,-150);
 
 	ctx.beginPath();
+	var time = Date.now();
 	points.forEach(function(point, index){
-		x = point.x + (40 * Math.sin(Date.now() / (200 + point.y)));
-		y = point.y + (40 * Math.cos(Date.now() / (200 + point.x)));
+		x = point.x + (40 * Math.sin(time / (200 + point.y)));
+		y = point.y + (40 * Math.cos(time / (200 + point.x)));
 		ctx.lineTo(x, y);
 	});
 	ctx.fill();
