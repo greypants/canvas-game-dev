@@ -1,3 +1,5 @@
+var frames = require('frames');
+
 var Inputs = function(keyMap) {
 	this.createInputs(keyMap);
 	this.addKeyListeners();
@@ -9,15 +11,19 @@ Inputs.prototype = {
 		addEventListener('keyup', this.release.bind(this));
 	},
 
+	removeInitial: function(input) {
+		input.initialPress = false;
+	},
+
 	press: function(e) {
 		var input = this.byCode[e.keyCode];
 
 		if(input) {
-			if(input.isPressed) {
-				input.initialPress = false;
-			} else {
+			e.preventDefault();
+			if(!input.isPressed) {
 				input.initialPress = true;
 				input.isPressed = true;
+				requestAnimationFrame(this.removeInitial.bind(this, input));
 			}
 		}
 	},
@@ -27,7 +33,6 @@ Inputs.prototype = {
 
 		if(input) {
 			input.isPressed = false;
-			input.initialPress = false;
 		}
 	},
 
