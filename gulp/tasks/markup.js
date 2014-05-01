@@ -4,7 +4,7 @@ var gulp       = require('gulp');
 gulp.task('markup', function() {
 	var dest = './build';
 
-	return gulp.src('./src/index.html')
+	return gulp.src('./src/*.html')
 		.pipe(changed(dest)) // Ignore unchanged files
 		.pipe(gulp.dest(dest));
 });

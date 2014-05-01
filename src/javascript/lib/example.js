@@ -9,13 +9,14 @@ Example.prototype = {
 	run: function() {
 		if(this.loops) {
 			frames.action = this.action;
-			frames.play();
+			frames.start();
 		} else {
+			frames.stop();
 			this.action();
 		}
 	},
 
-	pause: function() {
+	clear: function() {
 		frames.pause();
 	}
 };

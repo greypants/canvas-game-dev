@@ -1,3 +1,7 @@
+@import compass
+
+$blue: #1496bb
+
 html, body
 	margin: 0
 	padding: 0
@@ -5,13 +9,55 @@ html, body
 body
 	-webkit-font-smoothing: antialiased
 	color: #555
-	background: #1496bb
-	font-family: sans-serif
-	text-align: center
+	background: $blue
+	font-family: 'Source Sans Pro', sans-serif
 	padding: 0
 
 canvas
 	margin: 0
-	display: inline-block
 	max-width: 100%
 	max-height: 100%
+
+nav
+	position: absolute
+	right: 0
+	top: 0
+	background: rgba(#000, 0.5)
+
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		height: 100%
+		width: 100%
+		left: -80px
+
+button
+	z-index: 1
+	-webkit-font-smoothing: antialiased
+	background: rgba(#000, 0.25)
+	cursor: pointer
+	border: 0
+	color: #fff
+	display: block
+	position: relative
+	font-family: 'Source Sans Pro', sans-serif
+	font-size: 16px
+	font-weight: bold
+	margin: 0 0 1px 0
+	padding: 10px 20px
+	text-align: left
+	text-transform: uppercase
+	width: 100%
+	outline: none
+	+transition(all .25s ease-in-out)
+	+transform(translate3d(0, 0, 0))
+
+	&:hover
+		background: rgba(#000, 0.00)
+	&:last-child
+		margin-bottom: 0
+
+	&.active
+		background: $blue
+		padding-right: 20px

@@ -4,14 +4,16 @@ var ctx    = require('context');
 module.exports = {
 	init: function() {
 		this.delta = 0;
-		window.addEventListener('blur', this.pause.bind(this), false);
-		window.addEventListener('focus', this.play.bind(this), false);
 	},
 
 	action: function(){}, // overwrite with action to run each frame
 
-	loop: function() {
+	clearCanvas: function() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
+	},
+
+	loop: function() {
+		this.clearCanvas()
 		this.setDelta();
 		this.action();
 		this.animationFrame = window.requestAnimationFrame(this.loop.bind(this));
@@ -22,8 +24,19 @@ module.exports = {
 		this.isPlaying = false;
 	},
 
-	play: function() {
-		if(!this.isPlaying) {
+	stop: function() {
+		this.pause();
+		this.clearCanvas();
+		this.isStopped = true;
+	},
+
+	start: function() {
+		this.isStopped = false;
+		this.resume();
+	},
+
+	resume: function() {
+		if(!this.isPlaying && !this.stopped) {
 			this.then = Date.now();
 			this.loop();
 			this.isPlaying = true;

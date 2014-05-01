@@ -21,13 +21,12 @@ var runner = new Sprite({
 });
 
 var timer = 0;
-var frameActions = function() {
+
+module.exports = new Example( function() {
 	timer += frames.delta;
 	if (timer > 1 / runner.fps) {
 		timer = 0;
 		runner.animate();
-		drawSprite(runner);
 	}
-};
-
-module.exports = new Example(frameActions, true);
+	drawSprite(runner);
+}, true);
