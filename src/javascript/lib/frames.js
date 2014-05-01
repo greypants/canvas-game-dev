@@ -1,3 +1,6 @@
+var canvas = require('canvas');
+var ctx    = require('context');
+
 module.exports = {
 	init: function() {
 		this.delta = 0;
@@ -8,6 +11,7 @@ module.exports = {
 	action: function(){}, // overwrite with action to run each frame
 
 	loop: function() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		this.setDelta();
 		this.action();
 		this.animationFrame = window.requestAnimationFrame(this.loop.bind(this));

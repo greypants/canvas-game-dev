@@ -15,7 +15,6 @@ var range = {
 };
 
 module.exports = new Example(function(){
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	baddie.x = ((Math.sin(Date.now() * speed.x) * range.x) + range.x) + 0.5 | 0;
 	baddie.y = ((Math.sin(Date.now() * speed.y) * range.y) + range.y) + 0.5 | 0;
 	ctx.drawImage(baddie.img, baddie.x, baddie.y);

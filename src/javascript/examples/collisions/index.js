@@ -13,7 +13,6 @@ var collision = function(a, b) {
 };
 
 module.exports = new Example(function() {
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	object1.update();
 
 	if(collision(object1, object2)) {

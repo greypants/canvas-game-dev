@@ -39,7 +39,6 @@ ship.update = function() {
 };
 
 module.exports = new Example(function() {
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ship.update();
 	ctx.drawImage(ship.img, ship.x, ship.y);
 }, true);

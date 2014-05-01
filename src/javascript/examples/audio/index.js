@@ -10,7 +10,6 @@ audio.preload = 'auto';
 audio.src = 'audio/laser.ogg';
 
 module.exports = new Example(function() {
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.drawImage(ship.img, ship.x, ship.y);
 
 	if(inputs.spacebar.isPressed) {

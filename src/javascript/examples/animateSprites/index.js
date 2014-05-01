@@ -25,7 +25,6 @@ var frameActions = function() {
 	timer += frames.delta;
 	if (timer > 1 / runner.fps) {
 		timer = 0;
-		ctx.clearRect(runner.x, runner.y, runner.width, runner.height);
 		runner.animate();
 		drawSprite(runner);
 	}
