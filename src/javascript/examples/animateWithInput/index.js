@@ -14,7 +14,7 @@ var keyMap = {
 
 var inputs = new Inputs(keyMap).byName;
 
-var ship = new Bitmap('/build/images/ship.png');
+var ship = new Bitmap('images/ship.png');
 
 ship.x = (canvas.width / 2) - 80;
 ship.y = canvas.height - 170;

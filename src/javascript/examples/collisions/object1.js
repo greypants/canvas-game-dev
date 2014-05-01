@@ -1,8 +1,8 @@
 var canvas = require('canvas');
 var ctx = require('context');
 var inputs = require('./inputs');
-var blue = 'rgba(0, 100, 255, 0.5)';
-var red = 'rgba(255, 0, 0, 0.5)';
+var white = 'rgba(255, 255, 255, 0.65)';
+var red = 'rgba(255, 0, 0, 0.65)';
 
 module.exports = {
 	x: (canvas.width / 2) - 50,
@@ -10,14 +10,14 @@ module.exports = {
 	height: 100,
 	width: 100,
 	speed: 10,
-	color: blue,
+	color: white,
 
 	makeRed: function() {
 		this.color = red;
 	},
 
-	makeBlue: function() {
-		this.color = blue;
+	makeWhite: function() {
+		this.color = white;
 	},
 
 	draw: function() {

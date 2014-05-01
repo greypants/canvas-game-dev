@@ -19,7 +19,7 @@ module.exports = new Example(function() {
 	if(collision(object1, object2)) {
 		object1.makeRed();
 	} else {
-		object1.makeBlue();
+		object1.makeWhite();
 	}
 
 	object1.draw();

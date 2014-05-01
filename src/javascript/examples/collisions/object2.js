@@ -1,7 +1,7 @@
 var canvas = require('canvas');
 var ctx = require('context');
 var inputs = require('./inputs');
-var green = 'rgba(0, 255, 50, 0.5)'
+var green = 'rgba(100, 255, 100, 0.75)';
 
 module.exports = {
 	x: (canvas.width / 2) - 25,
