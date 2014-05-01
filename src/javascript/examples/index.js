@@ -9,5 +9,6 @@ module.exports = {
 	animateWithInput: require('./animateWithInput'),
 	animateSprites: require('./animateSprites'),
 	collisions: require('./collisions'),
+	text: require('./text'),
 	audio: require('./audio')
 };
