@@ -2,6 +2,14 @@ Canvas Game Dev
 ===============
 Step by step examples of building an HTML5 game with JavaScript and Canvas.
 
+Additional Resources:
+- http://github.com/greypants/html5-games-talk
+- http://github.com/greypants/blastEngine
+- http://viget.com/extend/time-based-animation
+- http://createjs.com
+- http://kineticjs.com
+- http://paperjs.org
+- http://html5rocks.com/en/tutorials/canvas/performance
 
 ## Running Locally
 Setup based on (gulp-starter)[https://github.com/greypants/gulp-starter]

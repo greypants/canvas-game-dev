@@ -1,6 +1,6 @@
 #intro
 
-Thank you so much for having me! Converge is an awesome conference, and I'm so happy to be here. My name is Dan Tello. I'm a Senior Front End Developer, and super priviledge to be part of the team at Viget in Falls Church VA. No matter how long you've been in our industry, there's always something new to learn, and I hope I can introduce you to something new to you today. I'm one of 10 brilliant front end devs on our team, and the diversity of strengths and interests gives us a lot of flexiblity to persue uncharted territory guided by our personal interests. Today, that territory is HTML 5 game development with Javascript and Canvas.
+Thank you so much for having me!  My name is Dan Tello. I'm a Senior Front End Dev at Viget in Falls Church VA. No matter how long you've been in our industry, there's always something new to learn, and I hope I can introduce you to something new to you today. Converge is an awesome conference, and I'm so happy to be here. I'm one of 10 brilliant front end devs on our team, and the diversity of strengths and interests gives us a lot of flexiblity to persue uncharted territory guided by our personal interests. Today, that territory is HTML 5 game development with Javascript and Canvas.
 
 ## Run Puma Run
 2012 was the year of the summer Olympics.
@@ -235,7 +235,7 @@ var data = {
   isPressed: false,
   initialPress: false
 };
-37: 'left',
+
 var inputs = {
   byCode: {
     37: data
@@ -281,6 +281,7 @@ If the bounding boxes of two objects on the canvas are overlapping, you have a c
 ![Debug Mode](debugpuma.png)
 
 ## Sound Effects
+
 
 
 ## Performance Considerations

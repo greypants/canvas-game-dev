@@ -5,7 +5,7 @@ var exampleMap = {};
 
 var getSelected = function() {
 	var name = sessionStorage.getItem('selectedExample');
-	return  exampleMap[name]? name : 'drawImage';
+	return  exampleMap[name]? name : 'drawShape';
 };
 
 var selectExample = function(name) {

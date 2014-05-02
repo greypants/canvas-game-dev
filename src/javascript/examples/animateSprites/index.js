@@ -6,10 +6,10 @@ var Sprite     = require('./sprite');
 
 var runner = new Sprite({
 	src: 'images/player-sprites.png',
-	fps: 8,
+	fps: 12,
 	frameIndex: 0,
-	x: 0,
-	y: 0,
+	x: 150,
+	y: 120,
 	width: 140,
 	height: 240,
 	spriteLocation: { x: 0, y: 0 },
